@@ -4,33 +4,58 @@ class img {
   width : 80, height : 80, bpp : 8,
   buffer : require("heatshrink").decompress(atob("nYA/AH4A/AH4A/AH4Aa6YACIf5NNKP5OSKGXXAAROZKF5NDKKBOLKFhNHKJxP1JhZQMJxoaHYh5OSjIADJ7ocIYZ5ORJogACihQPJA5NJOaIAQJo5PCKA5PLJKBPdJI4EEKBAuHJzBRXJw4AIJ9JQTdBBSJeJxPaKCJOHUBZQFERBQqJoxMMJ6BObJ5pOHJ55QEJ0hPMJQ5PHK5IpKJzpPPIA5XMKApPwToqiNKBTuzJIhKEKB5PlJxZPIeBIHDKBBPcCwpOMJ4Q9JAAwPKExCXgJ5RBMABonJIZBNcJ5QIDK6AoKIhJNaJ4pTFJg5ULGzBPhd7xPoSYxTFvN5J/7lIKAZOBKBpOxKAbxDeghODKBhP1d4gAD4xPOJ2bxJJ6BO1KASiGjPGKAhO/URJPMJ3QAGJ5hM/AAZPFKAZJ/J5hG/JxgDCI/6eOKH5PJTwpP/J5hO/ABZOGKH7v/JzBP/J6ROEJ5cUAHJPJCxkZAexOBJ5F5C5ae8J4yhJKIIB4TxKhEAIqf/J46f/ToJPET6KiDAeROCT6JOEAOpJJJxZsDUOxKKJopSFT+5QFJZjw9AIoANCIRO/ACBQ/J35Q/KF0ZAAID/Khqf/U5yd/AZKf/UKpZCAH4AIT/6hTSf6hQSf4BOAH6hQAP6f/UMQD/AZoA/Tv6d/AH4A/AH4ANA=="))
 };}
+  
   static star() { 
     return {
   width : 8, height : 8, bpp : 8,
   buffer : require("heatshrink").decompress(atob("oIAKx4GGAAIFFAAYIGC5IGCAQYtFAYI="))
 };}
+  
   static menuFrame() { 
     return {
   width : 66, height : 70, bpp : 8,
   transparent : 254,
   buffer : require("heatshrink").decompress(atob("/wAFlgACAggATEYwAdlmz2YqCAgQCBAAQNEAxJBnHohJFBI5BvPowxCBoxBolYACOIh2HZw5BHEAYAWIAvWAAQ5FHAo6JBogFBEAYAWIQZABEwouCAgYAScAwAVIQJAD1gA4HYTJBIIIECAG48EAgbMCAGhB/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B/IP5B3AHBBG2fWAHA7BYAUrAoIA6IARBBoOsAHRACIQQA7H4Q"))
 };}
+  
   static logo() {
     return {
   width : 51, height : 41, bpp : 8,
   transparent : 254,
-  buffer : require("heatshrink").decompress(atob("/wAOlgQPAD0sAAPXGdYvDAAYzmFwQvF6+2GYQAODwoGGGBAuFF4IADBYwAJPo4GEGYpfHAAwyQIBwxGFw4zFBphDDAxQzDGIQiPGSwMGGSCiLCRgDFTAgyLVwwyYMgoyIcJQPJGRjLQERAyZAwoylCxgyKDaAyMS5T+NGRQ8OFQIGGGIIynRwgxFGTYPFRgYABFIYGFGRpbLCBYpFABD+KGX6eKGTQJFGVQADGRz+IGTKYMCBTLnGUK6KFA4yxMq4xQGWQoICJSYeGU6EIBJIyIGKAzEGJIylGYofJehBCHGKpRKGRIAGGKjoMGRxCBGMAyKFoIACGCAzMQYoyKFyYzLWo4yjEgjnKBwT2WGZrnLGYoxcEgbnMe7AzMED4AL"))};}
+  buffer : require("heatshrink").decompress(atob("/wAOlgQPAD0sAAPXGdYvDAAYzmFwQvF6+2GYQAODwoGGGBAuFF4IADBYwAJPo4GEGYpfHAAwyQIBwxGFw4zFBphDDAxQzDGIQiPGSwMGGSCiLCRgDFTAgyLVwwyYMgoyIcJQPJGRjLQERAyZAwoylCxgyKDaAyMS5T+NGRQ8OFQIGGGIIynRwgxFGTYPFRgYABFIYGFGRpbLCBYpFABD+KGX6eKGTQJFGVQADGRz+IGTKYMCBTLnGUK6KFA4yxMq4xQGWQoICJSYeGU6EIBJIyIGKAzEGJIylGYofJehBCHGKpRKGRIAGGKjoMGRxCBGMAyKFoIACGCAzMQYoyKFyYzLWo4yjEgjnKBwT2WGZrnLGYoxcEgbnMe7AzMED4AL"))
+};}
+  
+  static arrowDown() {
+    return {
+  width : 8, height : 5, bpp : 4,
+  transparent : 1,
+  buffer : E.toArrayBuffer(atob("EAAAAQ////AQ//8BEQ/wEREQARE="))
+};}
+  
+  static arrowUp() {
+    return {
+  width : 8, height : 5, bpp : 4,
+  transparent : 1,
+  buffer : E.toArrayBuffer(atob("ERABEREP8BEQ//8BD///8BAAAAE="))
+};}
+  
+  static okButton() {
+    return {
+  width : 12, height : 7, bpp : 4,
+  transparent : 1,
+  buffer : require("heatshrink").decompress(atob("AAcBiMP/8Ph4FCAAQFE+ERBY4XEEYoA="))
+};}
 }
 
 class beep {
   static select () {
-    //b = Bangle.beep(20,880).then(()=>Bangle.beep(50,1200));
+    b = Bangle.beep(20,880).then(()=>Bangle.beep(50,1200));
   }
   static move() {
-    //b = Bangle.beep(20,440);
+    b = Bangle.beep(20,440);
   }
   static deny() {
-    //b = Bangle.beep(20,440).then(()=>Bangle.beep(50,220));
+    b = Bangle.beep(20,440).then(()=>Bangle.beep(50,220));
   }
 }
 
@@ -47,6 +72,9 @@ let bg = null;
 let logo = null;
 let menuBG = null;
 let menuFrame = null;
+let arrowUp = null;
+let arrowDown = null;
+let okButton = null;
 
 // Menu Items
 let menuItems = [];
@@ -104,6 +132,9 @@ const states = {
       g.fillRect(0,0,80,80);
       menuBG = img.star();
       menuFrame = img.menuFrame();
+      arrowUp = img.arrowUp();
+      arrowDown = img.arrowDown();
+      okButton = img.okButton();
       menuItems = [
         { name: "EGG", func: () => {} },
         { name: "PET", func: () => {} },
@@ -116,6 +147,9 @@ const states = {
     end: () => {
       menuBG = null;
       menuFrame = null;
+      arrowUp = null;
+      arrowDown = null;
+      okButton = null;
     },
     update: () => {
       let f = frame%20;
@@ -219,6 +253,13 @@ function onB2(){
 
 function onB3(){
   state.onB3();
+}
+
+///////////////////////////////////////////
+// DEBUG
+function dbg_mem()
+{
+  print(process.memory().free);
 }
 
 // Initialize
