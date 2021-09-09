@@ -3362,7 +3362,7 @@
 { "id": "hcclock",
   "name": "Hi-Contrast Clock",
   "icon": "hcclock-icon.png",
-  "version":"0.01",
+  "version":"0.02",
   "description": "Hi-Contrast Clock : A simple yet very bold clock that aims to be readable in high luninosity environments. Uses big 10x5 pixel digits. Use BTN 1 to switch background and foreground colors.",
   "tags": "clock",
   "type":"clock",
