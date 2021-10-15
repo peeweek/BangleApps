@@ -4,12 +4,27 @@
     "tags": "tool,system,b2",
     "type":"bootloader",
     "icon": "bootloader.png",
-    "version":"0.29",
+    "version":"0.30",
     "description": "This is needed by Bangle.js to automatically load the clock, menu, widgets and settings",
     "storage": [
       {"name":".boot0","url":"boot0.js"},
       {"name":".bootcde","url":"bootloader.js"},
       {"name":"bootupdate.js","url":"bootupdate.js"}
+    ],
+    "sortorder" : -10
+  },
+  { "id": "health",
+    "name": "Health Tracking",
+    "tags": "tool,system,b2",
+    "icon": "app.png",
+    "version":"0.01",
+    "description": "Logs health data and provides an app to view it (BETA - requires firmware 2v11)",
+    "readme": "README.md",
+    "storage": [
+      {"name":"health.app.js","url":"app.js"},
+      {"name":"health.img","url":"app-icon.js","evaluate":true},
+      {"name":"health.boot.js","url":"boot.js"},
+      {"name":"health","url":"lib.js"}
     ],
     "sortorder" : -10
   },
@@ -42,7 +57,7 @@
     "name": "Launcher (Default)",
     "shortName":"Launcher",
     "icon": "app.png",
-    "version":"0.06",
+    "version":"0.07",
     "description": "This is needed by Bangle.js to display a menu allowing you to choose your own applications. You can replace this with a customised launcher.",
     "tags": "tool,system,launcher,b2",
     "type":"launch",
@@ -55,7 +70,7 @@
     "name": "Launcher (Bangle.js 2)",
     "shortName":"Launcher",
     "icon": "app.png",
-    "version":"0.02",
+    "version":"0.03",
     "description": "This is needed by Bangle.js 2.0 to display a menu allowing you to choose your own applications. It will not work on Bangle.js 1.0.",
     "tags": "tool,system,launcher,b2,bno1",
     "type":"launch",
@@ -67,7 +82,7 @@
   { "id": "about",
     "name": "About",
     "icon": "app.png",
-    "version":"0.08",
+    "version":"0.09",
     "description": "Bangle.js About page - showing software version, stats, and a collaborative mural from the Bangle.js KickStarter backers",
     "tags": "tool,system,b2",
     "allow_emulator":true,
@@ -94,8 +109,8 @@
     "name": "Notifications (default)",
     "shortName":"Notifications",
     "icon": "notify.png",
-    "version":"0.10",
-    "description": "A handler for displaying notifications that displays them in a bar at the top of the screen",
+    "version":"0.11",
+    "description": "Provides the default `notify` module used by applications to display notifications in a bar at the top of the screen. This module is installed by default by client applications such as the Gadgetbridge app.  Installing `Fullscreen Notifications` replaces this module with a version that displays the notifications using the full screen",
     "tags": "widget",
     "type": "notify",
     "readme": "README.md",
@@ -107,8 +122,8 @@
     "name": "Fullscreen Notifications",
     "shortName":"Notifications",
     "icon": "notify.png",
-    "version":"0.11",
-    "description": "A handler for displaying notifications that displays them fullscreen. This may not fully restore the screen after on some apps. See `Notifications (default)` for more information about the notifications library.",
+    "version":"0.12",
+    "description": "Provides a replacement for the `Notifications (default)` `notify` module.   This version is used by applications to display notifications fullscreen. This may not fully restore the screen after on some apps. See `Notifications (default)` for more information about the notify module.",
     "tags": "widget,b2",
     "type": "notify",
     "storage": [
@@ -185,7 +200,7 @@
   { "id": "setting",
     "name": "Settings",
     "icon": "settings.png",
-    "version":"0.28",
+    "version":"0.30",
     "description": "A menu for setting up Bangle.js",
     "tags": "tool,system,b2",
     "readme": "README.md",
@@ -199,11 +214,11 @@
     "sortorder" : -2
   },
   { "id": "alarm",
-    "name": "Default Alarm",
+    "name": "Default Alarm & Timer",
     "shortName":"Alarms",
     "icon": "app.png",
-    "version":"0.12",
-    "description": "Set and respond to alarms",
+    "version":"0.13",
+    "description": "Set and respond to alarms and timers",
     "tags": "tool,alarm,widget,b2",
     "storage": [
       {"name":"alarm.app.js","url":"app.js"},
@@ -258,7 +273,7 @@
   { "id": "slidingtext",
     "name": "Sliding Clock",
     "icon": "slidingtext.png",
-    "version":"0.06",
+    "version":"0.07",
     "description": "Inspired by the Pebble sliding clock, old times are scrolled off the screen and new times on. You are also able to change language on the fly so you can see the time written in other languages using button 1. Currently English, French, Japanese, Spanish and German are supported",
     "tags": "clock",
     "type":"clock",
@@ -317,6 +332,20 @@
     "storage": [
       {"name":"sweepclock.app.js","url":"sweepclock.js"},
       {"name":"sweepclock.img","url":"sweepclock-icon.js","evaluate":true}
+    ]
+  },
+  { "id": "matrixclock",
+    "name": "Matrix Clock",
+    "icon": "matrixclock.png",
+    "version":"0.01",
+    "description": "inspired by The Matrix, a clock of the same style",
+    "tags": "clock",
+    "type":"clock",
+    "allow_emulator":true,
+     "readme": "README.md",
+    "storage": [
+      {"name":"matrixclock.app.js","url":"matrixclock.js"},
+      {"name":"matrixclock.img","url":"matrixclock-icon.js","evaluate":true}
     ]
   },
   { "id": "imgclock",
@@ -486,9 +515,9 @@
   { "id": "speedo",
     "name": "Speedo",
     "icon": "speedo.png",
-    "version":"0.04",
+    "version":"0.05",
     "description": "Show the current speed according to the GPS",
-    "tags": "tool,outdoors,gps",
+    "tags": "tool,outdoors,gps,b2",
     "storage": [
       {"name":"speedo.app.js","url":"speedo.js"},
       {"name":"speedo.img","url":"speedo-icon.js","evaluate":true}
@@ -497,7 +526,7 @@
   { "id": "gpsrec",
     "name": "GPS Recorder",
     "icon": "app.png",
-    "version":"0.23",
+    "version":"0.24",
     "interface": "interface.html",
     "description": "Application that allows you to record a GPS track. Can run in background",
     "tags": "tool,outdoors,gps,widget",
@@ -571,7 +600,7 @@
   { "id": "weather",
     "name": "Weather",
     "icon": "icon.png",
-    "version":"0.08",
+    "version":"0.10",
     "description": "Show Gadgetbridge weather report",
     "readme": "readme.md",
     "tags": "widget,outdoors",
@@ -639,7 +668,7 @@
     "name": "Battery Level Widget (with percentage)",
     "shortName": "Battery Widget",
     "icon": "widget.png",
-    "version":"0.12",
+    "version":"0.13",
     "description": "Show the current battery level and charging status in the top right of the clock, with charge percentage",
     "tags": "widget,battery,b2",
     "type":"widget",
@@ -673,7 +702,7 @@
   { "id": "widbt",
     "name": "Bluetooth Widget",
     "icon": "widget.png",
-    "version":"0.05",
+    "version":"0.06",
     "description": "Show the current Bluetooth connection status in the top right of the clock",
     "tags": "widget,bluetooth,b2",
     "type":"widget",
@@ -1110,9 +1139,9 @@
     "id": "gpsinfo",
     "name": "GPS Info",
     "icon": "gps-info.png",
-    "version":"0.04",
+    "version":"0.05",
     "description": "An application that displays information about altitude, lat/lon, satellites and time",
-    "tags": "gps",
+    "tags": "gps,b2",
     "type": "app",
     "storage": [
       {"name":"gpsinfo.app.js","url": "gps-info.js"},
@@ -1125,7 +1154,7 @@
     "version":"0.01",
     "description": "Downloads assisted GPS (AGPS) data to Bangle.js for faster GPS startup and more accurate fixes. **No app will be installed**, this just uploads new data to the GPS chip.",
     "custom": "custom.html",
-    "tags": "tool,outdoors,agps",
+    "tags": "tool,outdoors,agps,bno2",
     "type": "RAM",
     "storage": [ ]
   },
@@ -1173,7 +1202,7 @@
   { "id": "widclk",
     "name": "Digital clock widget",
     "icon": "widget.png",
-    "version":"0.05",
+    "version":"0.06",
     "description": "A simple digital clock widget",
     "tags": "widget,clock",
     "type":"widget",
@@ -1222,9 +1251,9 @@
   { "id": "demoapp",
     "name": "Demo Loop",
     "icon": "app.png",
-    "version":"0.01",
+    "version":"0.02",
     "description": "Simple demo app - displays Bangle.js, JS logo, graphics, and Bangle.js information",
-    "tags": "",
+    "tags": "bno2",
     "type":"app",
     "allow_emulator":true,
     "storage": [
@@ -1302,7 +1331,7 @@
   { "id": "widid",
     "name": "Bluetooth ID Widget",
     "icon": "widget.png",
-    "version":"0.02",
+    "version":"0.03",
     "description": "Display the last two tuple of your Bangle.js MAC address in the widget section. This is useful for figuring out which Bangle.js to connect to if you have more than one Bangle.js!",
     "tags": "widget,address,mac",
     "type":"widget",
@@ -1314,14 +1343,13 @@
     "id": "grocery",
     "name": "Grocery",
     "icon": "grocery.png",
-    "version":"0.01",
+    "version":"0.02",
     "description": "Simple grocery (shopping) list - Display a list of product and track if you already put them in your cart.",
     "tags": "tool,outdoors,shopping,list",
     "type": "app",
     "custom":"grocery.html",
     "storage": [
-      {"name":"grocery"},
-      {"name":"grocery.app.js"},
+      {"name":"grocery.app.js", "url":"app.js"},
       {"name":"grocery.img","url":"grocery-icon.js","evaluate":true}
     ]
   },
@@ -1367,7 +1395,7 @@
   { "id": "barclock",
     "name": "Bar Clock",
     "icon": "clock-bar.png",
-    "version":"0.07",
+    "version":"0.08",
     "description": "A simple digital clock showing seconds as a bar",
     "tags": "clock",
     "type":"clock",
@@ -2044,7 +2072,7 @@
     "name": "Find Phone",
     "shortName":"Find Phone",
     "icon": "app.png",
-    "version":"0.02",
+    "version":"0.03",
     "description": "Find your phone via Gadgetbridge. Click any button to let your phone ring. 📳  Note: The functionality is available even without this app, just go to Settings, App Settings, Gadgetbridge, Find Phone.",
     "tags": "tool,android",
     "readme": "README.md",
@@ -2400,7 +2428,7 @@
     "name": "Acceleration Logger",
     "shortName":"Accel Log",
     "icon": "app.png",
-    "version":"0.02",
+    "version":"0.03",
     "interface": "interface.html",
     "description": "Logs XYZ acceleration data to a CSV file that can be downloaded to your PC",
     "tags": "outdoor,b2",
@@ -2879,24 +2907,6 @@
     {"name":"de-stress.img","url":"app-icon.js","evaluate":true}
   ]
 },
-{ "id": "gpsservice",
-  "name": "Low power GPS Service",
-  "shortName":"GPS Service",
-  "icon": "gpsservice.png",
-  "version":"0.04",
-  "description": "low power GPS widget",
-  "tags": "gps outdoors navigation",
-  "readme": "README.md",
-  "storage": [
-    {"name":"gpsservice.app.js","url":"app.js"},
-    {"name":"gpsservice.settings.js","url":"settings.js"},
-    {"name":"gpsservice.wid.js","url":"widget.js"},
-    {"name":"gpsservice.img","url":"gpsservice-icon.js","evaluate":true}
-  ],
-  "data": [
-    {"name":"gpsservice.settings.json","url":"settings.json"}
-  ]
-},
 { "id": "mclockplus",
   "name": "Morph Clock+",
   "shortName":"Morph Clock+",
@@ -2986,7 +2996,7 @@
   "icon": "gpssetup.png",
   "version":"0.02",
   "description": "Configure the GPS power options and store them in the GPS nvram",
-  "tags": "gps, tools, outdoors",
+  "tags": "gps,tools,outdoors,bno2",
   "readme": "README.md",
   "storage": [
     {"name":"gpssetup","url":"gpssetup.js"},
@@ -3508,7 +3518,7 @@
   "name": "Pastel Clock",
   "shortName": "Pastel",
   "icon": "pastel.png",
-  "version":"0.01",
+  "version":"0.03",
   "description": "A Configurable clock with custom fonts and background",
   "tags": "clock,b2",
   "type":"clock",
@@ -3525,10 +3535,11 @@
 { "id": "antonclk",
   "name": "Anton Clock",
   "icon": "app.png",
-  "version":"0.01",
+  "version":"0.02",
   "description": "A simple clock using the bold Anton font.",
   "tags":"clock,b2",
   "type":"clock",
+  "allow_emulator":true,
   "storage": [
     {"name":"antonclk.app.js","url":"app.js"},
     {"name":"antonclk.img","url":"app-icon.js","evaluate":true}
@@ -3537,13 +3548,56 @@
 { "id": "waveclk",
   "name": "Wave Clock",
   "icon": "app.png",
-  "version":"0.01",
-  "description": "A clock using a wave image by [Lillith May](https://www.instagram.com/_lilustrations_/). **Note: This requires a bugfix for #2049 on Bangle.js 1**",
+  "version":"0.02",
+  "description": "A clock using a wave image by [Lillith May](https://www.instagram.com/_lilustrations_/). **Note: This requires firmware 2v11 or later Bangle.js 1**",
   "tags":"clock,b2",
   "type":"clock",
+  "allow_emulator":true,
   "storage": [
     {"name":"waveclk.app.js","url":"app.js"},
     {"name":"waveclk.img","url":"app-icon.js","evaluate":true}
+  ]
+},
+{ "id": "floralclk",
+  "name": "Floral Clock",
+  "icon": "app.png",
+  "version":"0.01",
+  "description": "A clock with a flower background by [Lillith May](https://www.instagram.com/_lilustrations_/). **Note: This requires firmware 2v11 or later Bangle.js 1**",
+  "tags":"clock,b2",
+  "type":"clock",
+  "allow_emulator":true,
+  "storage": [
+    {"name":"floralclk.app.js","url":"app.js"},
+    {"name":"floralclk.img","url":"app-icon.js","evaluate":true}
+  ]
+},
+{ "id": "score",
+  "name": "Score Tracker",
+  "icon": "score.app.png",
+  "version":"0.01",
+  "description": "Score Tracker for sports that use plain numbers (e.g. Badminton, Volleyball, Soccer, Table Tennis, ...). Also supports tennis scoring.",
+  "readme": "README.md",
+  "tags": "b2",
+  "type": "app",
+  "storage": [
+    {"name":"score.app.js","url":"score.app.js"},
+    {"name":"score.settings.js","url":"score.settings.js"},
+    {"name":"score.presets.json","url":"score.presets.json"},
+    {"name":"score.img","url":"score.app-icon.js","evaluate":true}
+  ],
+  "data": [
+    {"name":"score.json"}
+  ]
+},
+{ "id": "menusmall",
+  "name": "Small Menus",
+  "icon": "app.png",
+  "version":"0.01",
+  "description": "Replace Bangle.js 2's menus with a version that contains smaller text",
+  "tags": "b2,bno1,system",
+  "type": "boot",
+  "storage": [
+    {"name":"menusmall.boot.js","url":"boot.js"}
   ]
 }
 ]
