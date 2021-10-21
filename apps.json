@@ -3399,7 +3399,6 @@
   "allow_emulator":true,
   "storage": [
     {"name":"hcclock.app.js","url":"hcclock.app.js"},
-    {"name":"hcclock.settings.js","url":"hcclock.settings.js"},
     {"name":"hcclock.img","url":"hcclock-icon.js","evaluate":true}
   ]
 },
