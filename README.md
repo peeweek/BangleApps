@@ -49,7 +49,7 @@ easily distinguish between file types, we use the following:
 
 ## Adding your app to the menu
 
-* Come up with a unique (all lowercase, nu spaces) name, we'll assume `7chname`. Bangle.js
+* Come up with a unique (all lowercase, no spaces) name, we'll assume `7chname`. Bangle.js
 is limited to 28 char filenames and appends a file extension (eg `.js`) so please
 try and keep filenames short to avoid overflowing the buffer.
 * Create a folder called `apps/<id>`, lets assume `apps/7chname`
@@ -217,8 +217,9 @@ and which gives information about the app for the Launcher.
 { "id": "appid",              // 7 character app id
   "name": "Readable name",    // readable name
   "shortName": "Short name",  // short name for launcher
-  "icon": "icon.png",         // icon in apps/
+  "version": "0v01",          // the version of this app
   "description": "...",       // long description (can contain markdown)
+  "icon": "icon.png",         // icon in apps/
   "type":"...",               // optional(if app) -  
                               //   'app' - an application
                               //   'widget' - a widget
@@ -226,6 +227,7 @@ and which gives information about the app for the Launcher.
                               //   'bootloader' - code that runs at startup only
                               //   'RAM' - code that runs and doesn't upload anything to storage
   "tags": "",                 // comma separated tag list for searching
+  "supports": ["BANGLEJS2"],  // List of device IDs supported, either BANGLEJS or BANGLEJS2
   "dependencies" : { "notify":"type" } // optional, app 'types' we depend on
                               // for instance this will use notify/notifyfs is they exist, or will pull in 'notify'
   "readme": "README.md",      // if supplied, a link to a markdown-style text file
@@ -236,6 +238,11 @@ and which gives information about the app for the Launcher.
                               // iframe, and it must post back an 'app' structure
                               // like this one with 'storage','name' and 'id' set up
                               // see below for more info
+
+  "customConnect": true,      // if supplied, ensure we are connected to a device
+                              // before the "custom.html" iframe is loaded. An
+                              // onInit function in "custom.html" is then called
+                              // with info on the currently connected device.                 
 
   "interface": "interface.html",   // if supplied, apps/interface.html is loaded in an
                               // iframe, and it may interact with the connected Bangle

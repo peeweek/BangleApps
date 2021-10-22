@@ -51,7 +51,8 @@ try{
 
 const APP_KEYS = [
   'id', 'name', 'shortName', 'version', 'icon', 'description', 'tags', 'type',
-  'sortorder', 'readme', 'custom', 'interface', 'storage', 'data', 'allow_emulator',
+  'sortorder', 'readme', 'custom', 'customConnect', 'interface', 'storage', 'data',
+  'supports', 'allow_emulator', 
   'dependencies'
 ];
 const STORAGE_KEYS = ['name', 'url', 'content', 'evaluate', 'noOverwite'];
@@ -81,6 +82,14 @@ apps.forEach((app,appIdx) => {
   if (!app.name) ERROR(`App ${app.id} has no name`);
   var isApp = !app.type || app.type=="app";
   if (app.name.length>20 && !app.shortName && isApp) ERROR(`App ${app.id} has a long name, but no shortName`);
+  if (!Array.isArray(app.supports)) ERROR(`App ${app.id} has no 'supports' field or it's not an array`);
+  else {
+    app.supports.forEach(dev => {
+      if (!["BANGLEJS","BANGLEJS2"].includes(dev))
+        ERROR(`App ${app.id} has unknown device in 'supports' field - ${dev}`);
+    });
+  }
+
   if (!app.version) WARN(`App ${app.id} has no version`);
   else {
     if (!fs.existsSync(appDir+"ChangeLog")) {
@@ -100,6 +109,7 @@ apps.forEach((app,appIdx) => {
   if (!fs.existsSync(appDir+app.icon)) ERROR(`App ${app.id} icon doesn't exist`);
   if (app.readme && !fs.existsSync(appDir+app.readme)) ERROR(`App ${app.id} README file doesn't exist`);
   if (app.custom && !fs.existsSync(appDir+app.custom)) ERROR(`App ${app.id} custom HTML doesn't exist`);
+  if (app.customConnect && !app.custom) ERROR(`App ${app.id} has customConnect but no customn HTML`);
   if (app.interface && !fs.existsSync(appDir+app.interface)) ERROR(`App ${app.id} interface HTML doesn't exist`);
   if (app.dependencies) {
     if (("object"==typeof app.dependencies) && !Array.isArray(app.dependencies)) {

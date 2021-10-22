@@ -16,7 +16,7 @@ function drawMenu() {
   var w = g.getWidth();
   var h = g.getHeight();
   var m = w/2;
-  var n = (h-48)/64;
+  var n = Math.floor((h-48)/64);
   if (selected>=n+menuScroll) menuScroll = 1+selected-n;
   if (selected<menuScroll) menuScroll = selected;
   // arrows
@@ -33,8 +33,10 @@ function drawMenu() {
     if (i+menuScroll==selected) {
       g.setColor(g.theme.bgH).fillRect(0,y,w-1,y+63);
       g.setColor(g.theme.fgH).drawRect(0,y,w-1,y+63);
-    } else
-      g.clearRect(0,y,w-1,y+63);
+    } else {
+      g.clearRect(0, y, w-1, y+63);
+      g.setColor(g.theme.fg);
+    }
     g.drawString(app.name,64,y+32);
     var icon=undefined;
     if (app.icon) icon = s.read(app.icon);
